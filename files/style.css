@@ -1,0 +1,240 @@
+/* import */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+/* reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.4em;
+}
+ol, ul {
+	list-style: none;
+}
+
+
+
+/* Variables*/
+:root {
+    --block-margin: 10px;
+    --border-color: #cfcfcf;
+    --font-color: #555555;
+    --font-color-second: #269eff;
+    --font-color-third: #243b4d;
+    --font-color-fourth: #e8e8e8;
+    --background-color-second: #f9ee3f;
+    --background-color-third: #ebebec;
+    --background-color-fourth: #269eff;
+}
+
+/* typography */
+body {
+    font-family: "Open Sans";
+    font-size: 1rem;
+}
+header nav { font-size: 1.25rem; }
+p, table, ul, cite, address,
+h1, h2, h3, h4, img { margin-bottom: 1em; }
+li { margin-bottom: 0.5em; }
+p, li, cite { color: var(--font-color); }
+a { color: var(--font-color-second); }
+a:hover { color: var(--font-color); }
+h1, h2 { color: var(--font-color-second); font-weight: bold; }
+h3, h4, .like--h3 { font-weight: bold }
+address dl { font-size: 0.8rem; }
+b, strong { font-weight: bold; }
+i { font-style: italic; }
+
+/* layout */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+@media only screen and (min-width: 600px) {
+  .content {
+    flex-direction: row;
+  }
+  .column__ration8-4 > *:first-child {
+      width: 70%;
+      margin-right: var(--block-margin);
+  }
+  .column__ration8-4 > *:last-child {
+      width: 30%;
+  }
+  article aside{
+      width: 100%;
+  }
+}
+.column_ration4-4-4 { flex-wrap: wrap; }
+.column_ration4-4-4 > * { width: calc(100% / 3); }
+.column__justify-sBetween { justify-content: space-between; }
+.column__justify-sBetween > * + p { text-align: right; }
+
+
+
+/* elements */
+
+cite, address {
+    padding: var(--block-margin);
+    display: block;
+    background-color: var(--background-color-second);
+    display: flex;
+    flex-direction: column;
+}
+cite .author { align-self: flex-end; color: white; }
+
+ul li {
+  position: relative;
+  margin-left: 16px;
+}
+
+
+.previewSection--title {
+  margin-top: calc(3 * var(--block-margin));
+}
+ul.previewSection {
+  justify-content: space-between;
+  margin: 0 calc(-1 * var(--block-margin));
+  flex-direction: row;
+}
+ul.previewSection li {
+    width: 100%;
+    margin-left: 0;
+}
+@media only screen and (min-width: 480px) { ul.previewSection li { width: calc(50% - 10px); } }
+@media only screen and (min-width: 600px) { ul.previewSection li { width: calc(33% - 10px); } }
+
+ul.previewSection li::before { display: none; }
+ul.previewSection li a {
+    padding: var(--block-margin);
+    display: block;
+    text-decoration: none;
+    color: var(--font-color);
+}
+ul.previewSection li:hover a {
+  color: var(--font-color-second);
+}
+ul.previewSection li a img {
+    width: 100%;
+    margin-bottom: var(--block-margin);
+}
+
+dl dt { font-weight: bold; }
+dl dd { margin-bottom: 1em; }
+
+
+}
+dl.mainText dt{padding:0; margin:0;}
+dl.mainText dt,
+dl.mainText dd { background-color: var(--background-color-third); }
+dl dt img {
+  width: 100%;
+  padding:0;
+  margin:0;
+}
+dl dd {
+  padding: var(--block-margin);
+}
+
+p.textMore { text-align: right; }
+
+/* page */
+body{
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+header {
+    padding: var(--block-margin);
+    margin-bottom: calc(2 * var(--block-margin));
+    border-bottom: 2px solid var(--border-color);
+    font-size: 1rem;
+}
+header nav { margin-bottom: var(--block-margin); }
+header nav ul { margin-bottom: 0; }
+header nav ul li {
+    color: #000000;
+    display: inline;
+    padding: 0 .5em;
+    margin-left: 0;
+}
+
+header nav ul li::before { display: none; }
+header nav ul li:last-child { padding-right: 0; }
+header nav ul li a {
+    text-decoration: none;
+    color: var(--font-color);
+    padding-top: 5px;
+    white-space: nowrap;
+}
+header nav ul li a:hover { color: var(--font-color-second); }
+header nav ul li.select a {
+  border-top: 3px solid var(--background-color-second);
+}
+
+@media only screen and (min-width: 600px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  header img { margin-bottom:  0; }
+}
+
+main { margin: var(--block-margin); }
+@media only screen and (min-width: 600px) {
+  main { margin: 0; }
+}
+
+footer {
+    background-color: var(--background-color-third);
+    padding: calc(2 * var(--block-margin));
+	text-align: center
+}
+footer p { margin-bottom:  0; }
+
+
+
+main article aside div{
+    padding: var(--block-margin);
+    display: block;
+    background-color: var(--background-color-second);
+    display: flex;
+    flex-direction: column;
+}
+.preview{padding: 30px 0px;}
+a:hover {cursor: pointer}
+
+@media only screen and (max-width: 600px) {header nav ul li {line-height: 3em;}}
+
+.certifikat a {width: 50%;}
+@media only screen and (max-width: 600px){
+	.certifikat a {width: 100%;}
+	}
+	
+	
+	
